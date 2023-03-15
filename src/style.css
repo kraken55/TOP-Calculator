@@ -30,3 +30,33 @@
     background-color: gray;
     border-radius: 12px;
 }
+
+.calculator-buttons-container {
+    display: flex;
+    flex: 2 0 auto;
+    flex-direction: row;
+}
+
+.calculator-buttons-numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*margin-top: 80px;*/
+    margin-left: 30px;
+    gap: 60px;
+}
+
+.calculator-buttons-numbers-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.calculator-button {
+    height: 80px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 4rem;
+    background-color: cornsilk;
+}
