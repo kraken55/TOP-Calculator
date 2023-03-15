@@ -45,3 +45,9 @@ const numberKeys = document.querySelectorAll(".number-button");
 numberKeys.forEach(key => key.addEventListener("click", () => {
     changeDisplayValue(parseInt(key.innerHTML));
 }));
+
+const signKey = document.querySelector(".sign-button");
+signKey.addEventListener("click", () => {
+    displayValue *= -1;
+    updateDisplay();
+})
