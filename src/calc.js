@@ -26,3 +26,22 @@ function operate(operator, x, y)
 {
     return operator(x, y);
 }
+
+let displayValue = 0;
+
+function updateDisplay()
+{
+    const numericalDisplay = document.querySelector(".current-number-displayed");
+    numericalDisplay.innerHTML = displayValue;
+}
+
+function changeDisplayValue(num)
+{
+    displayValue = displayValue * 10 + num;
+    updateDisplay();
+}
+
+const numberKeys = document.querySelectorAll(".number-button");
+numberKeys.forEach(key => key.addEventListener("click", () => {
+    changeDisplayValue(parseInt(key.innerHTML));
+}));
