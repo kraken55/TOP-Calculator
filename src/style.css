@@ -22,13 +22,20 @@
 
 .calculator-screen {
     display: flex;
-    flex: auto;
+    flex: 1 0 auto;
     justify-content: right;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: gray;
     border-radius: 12px;
+}
+
+.current-number-displayed {
+    font-size: 7rem;
+    margin-bottom: auto;
+    margin-top: auto;
+    color: whitesmoke;
 }
 
 .calculator-buttons-container {
