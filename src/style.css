@@ -76,6 +76,6 @@
     background-color: cornsilk;
 }
 
-.operator-button {
+.operator-button, .clear-button, .equals-button {
     background-color: lightblue;
 }
