@@ -19,3 +19,14 @@
     border-radius: 10px;
     background-color: gainsboro;
 }
+
+.calculator-screen {
+    display: flex;
+    flex: auto;
+    justify-content: right;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: gray;
+    border-radius: 12px;
+}
