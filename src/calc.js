@@ -50,4 +50,10 @@ const signKey = document.querySelector(".sign-button");
 signKey.addEventListener("click", () => {
     displayValue *= -1;
     updateDisplay();
-})
+});
+
+const clearKey = document.querySelector(".clear-button");
+clearKey.addEventListener("click", () => {
+    displayValue = 0;
+    updateDisplay();
+});
