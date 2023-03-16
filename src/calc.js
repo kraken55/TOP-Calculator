@@ -27,33 +27,54 @@ function operate(operator, x, y)
     return operator(x, y);
 }
 
-let displayValue = 0;
+let currentlyDisplayed = 0;
+let operand = undefined;
+let currentOperation = undefined;
 
 function updateDisplay()
 {
     const numericalDisplay = document.querySelector(".current-number-displayed");
-    numericalDisplay.innerHTML = displayValue;
+    numericalDisplay.innerHTML = currentlyDisplayed;
 }
 
-function changeDisplayValue(num)
+function changeDisplayed(num)
 {
-    displayValue = displayValue * 10 + num;
+    currentlyDisplayed = currentlyDisplayed * 10 + num;
     updateDisplay();
 }
 
 const numberKeys = document.querySelectorAll(".number-button");
 numberKeys.forEach(key => key.addEventListener("click", () => {
-    changeDisplayValue(parseInt(key.innerHTML));
+    changeDisplayed(parseInt(key.innerHTML));
 }));
 
 const signKey = document.querySelector(".sign-button");
 signKey.addEventListener("click", () => {
-    displayValue *= -1;
+    currentlyDisplayed *= -1;
     updateDisplay();
 });
 
 const clearKey = document.querySelector(".clear-button");
 clearKey.addEventListener("click", () => {
-    displayValue = 0;
+    currentlyDisplayed = 0;
+    operand = 0;
+    updateDisplay();
+});
+
+const operationKeys = document.querySelectorAll(".operator-button");
+operationKeys.forEach(key => key.addEventListener("click", () => {
+    currentOperation = key.dataset.operation;
+
+    operand = 0;
+    let temp = currentlyDisplayed;
+    currentlyDisplayed = operand;
+    operand = temp;
+}));
+
+const equalsKey = document.querySelector(".equals-button");
+equalsKey.addEventListener("click", () => {
+    currentlyDisplayed = operate(window[currentOperation], currentlyDisplayed, operand);
+    operand = 0;
+    currentOperation = undefined;
     updateDisplay();
 });
